@@ -1,5 +1,8 @@
 # enemyTracker
+
 Automatic object tracking in a video game using python and opencv
+
+For a demo, see https://youtu.be/aPmLtCADNvI
 
 ### Motivation
 
