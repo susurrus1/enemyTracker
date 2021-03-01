@@ -29,25 +29,35 @@ You can watch the result here for a sample DS3 gameplay: https://youtu.be/aPmLtC
 
 There are several parameters near the top of the python code that you can modify/optimize (and you may need to depending on the game):
 
+
 inputVideo = name of input video file
 
 outputVideo = name of output video file (for the moment, this needs to be a .avi file)
+
 fps = frames per second in the ouptut video
 
 fsca = an factor to scale down the input video frame size (may be needed if your video seems to be running slowly)
 
 shortDistance = any points closer than this number of pixels are considered close for clustering purposes
+
 minClusterSize = minimum number of points in a cluster to trigger the tracking algorithm
+
 maxCorners = maximum allowed number of features found by the Shi-Tomasi algorithm
 
 trackerWinSize  = (width,height) of the window used by the Lucas-Kanade tracking algorithm
+
 trackerMaxLevel = number of pyramid levels for the Lucas-Kanade algorithm
+
 trackerCriteria = this is used by the tracking algorithm, and you shouldn't have to change it
+
 maxTrackerError = maximum allowed tracking error
+
 maxTrackerKills = maximum allowed number of times a tracker can fail before it's "decomissioned"
 
 subtractorHist = number of frames to use for background subtraction
+
 subtractorThresh = threshold for background subtraction
+
 
 The program currently gets its input from a video file, but could be modified relatively easily to read from a live game window (see, e.g., https://github.com/susurrus1/DesktopObjectDetection), although the game would have to be displayed in windowed mode in order for the python script to be able to draw on the game screen.
 
