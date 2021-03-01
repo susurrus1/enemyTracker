@@ -11,8 +11,10 @@ I learned what I needed to write this script from several different sources: see
 
 The code was written in Python 3.7 on Windows 10. You will need to first install the necessary modules (or you can download them from pypi.org):
 
-pip install opencv-python 
-pip install numpy 
+pip install opencv-python
+
+pip install numpy
+
 pip install scipy
 
 ### Usage
