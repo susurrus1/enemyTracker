@@ -21,9 +21,9 @@ Once the libraries are installed, just run the main code, e.g. by executing
 
 python tracker.v1.py
 
-from a command line, or start it from an IDE if you use one. This will read in the included raw gameplay video file "enemy-approaches-ext.mp4" and process and display each frame.  The processed frames will also be saved to the video file "show-tracking.avi".  
+from a command line, or start it from an IDE if you use one. This will read in a raw gameplay video file.  The input file name is currently set to "enemy-approaches-ext.mp4" but you will need to change it to the name of your won file.  The program will then run and process and display each frame.  The processed frames will also be saved to the video file "show-tracking.avi".  
 
-You can watch the result here: https://youtu.be/aPmLtCADNvI
+You can watch the result here for a sample DS3 gameplay: https://youtu.be/aPmLtCADNvI
 
 There are several parameters near the top of the python code that you can modify/optimize (and you may need to depending on the game):
 
