@@ -2,11 +2,11 @@
 
 Automatic object tracking in a video game using python and opencv
 
-For a demo, see https://youtu.be/aPmLtCADNvI
+For a demo, see https://youtu.be/Onm2FwZW2HE
 
 ### Motivation
 
-This is work in progress showing feature detection (by the Shi-Tomasi algorithm), point clustering, and object tracking (by the Lucas-Kanade algorithm).  Red dots mark detected features, blue rectangles that appear briefly show clusters of features, and green dots mark a point that is being tracked.  Eventually, I would like to use this type of image processing to let my code automatically control my character in a game and react to its environment (e.g., run from enemies, walk while avoiding obstacles, etc).
+This is work in progress showing feature detection (by the Shi-Tomasi algorithm), point clustering, and object tracking (by the Lucas-Kanade algorithm).  Red dots mark detected features, blue rectangles that appear briefly show clusters of features, and green dots mark a point that is being tracked.  Green arrows show the displacement of a tracker from one frame to the next.  Eventually, I would like to use this type of image processing to let my code automatically control my character in a game and react to its environment (e.g., run from enemies, walk while avoiding obstacles, etc).
 
 I learned what I needed to write this script from several different sources: see the credits section below for details.
 
@@ -24,11 +24,11 @@ pip install scipy
 
 Once the libraries are installed, just run the main code, e.g. by executing
 
-python tracker.v1.py
+python tracker.v2.py
 
 from a command line, or start it from an IDE if you use one. This will read in a raw gameplay video file.  The input file name is currently set to "enemy-approaches-ext.mp4" but you will need to change it to the name of your won file.  The program will then run and process and display each frame.  The processed frames will also be saved to the video file "show-tracking.avi".  
 
-You can watch the result here for a sample DS3 gameplay: https://youtu.be/aPmLtCADNvI
+You can watch the result here for a sample DS3 gameplay: https://youtu.be/Onm2FwZW2HE
 
 There are several parameters near the top of the python code that you can modify/optimize (and you may need to depending on the game):
 
@@ -47,6 +47,8 @@ minClusterSize = minimum number of points in a cluster to trigger the tracking a
 
 maxCorners = maximum allowed number of features found by the Shi-Tomasi algorithm
 
+maxTrackers = maximum number of trackers allowed on screen at one time
+
 trackerWinSize  = (width,height) of the window used by the Lucas-Kanade tracking algorithm
 
 trackerMaxLevel = number of pyramid levels for the Lucas-Kanade algorithm
@@ -56,6 +58,8 @@ trackerCriteria = this is used by the tracking algorithm, and you shouldn't have
 maxTrackerError = maximum allowed tracking error
 
 maxTrackerKills = maximum allowed number of times a tracker can fail before it's "decomissioned"
+
+trackerArrowScale = scale factor for arrow showing tracker displacement
 
 subtractorHist = number of frames to use for background subtraction
 
